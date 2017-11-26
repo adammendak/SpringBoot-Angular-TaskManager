@@ -9,14 +9,21 @@ import {Task} from "../tasks.module";
 })
 export class TasksAddComponent implements OnInit {
 
+  addTaskValue: string = null;
+
   constructor(private taskService: TaskService) { }
 
   ngOnInit() {
   }
 
-  onTaskAdd(event) {
-      let task : Task = new Task(event.target.value, false, "todayString");
-      this.taskService.addTask(task);
-  }
+  // onTaskAdd(event) {
+  //     let task : Task = new Task(event.target.value, false, "todayString");
+  //     this.taskService.addTask(task)
+  //         .unsubscribe(
+  //             (newTask : Task) => {
+  //                 this.addTaskValue = ' ';
+  //             }
+  //         )
+  // }
 
 }
